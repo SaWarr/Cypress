@@ -39,8 +39,14 @@ describe('User interaction suite', () => {
 
           })
 
-          it('Likes and then unlikes an article without changing page ', () => {
-            // TBD
+          it('Navigates to, then likes and then unlikes an article', () => {
+            cy.contains('Continue Reading').click()
+            cy.url().should('eq','https://blogsite.com/2020/08/14/new-challenges/') //Theoretically again
+            cy.get('a[href*="#"]').click().click()
+          })
+
+          it('Does nothing yet', () => {
+            //TBD
           })
     })
 })
